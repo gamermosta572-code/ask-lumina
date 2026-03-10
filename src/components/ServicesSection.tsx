@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
-import { Shield, Lock, BookOpen, CheckCircle, Cpu, Activity, Utensils, Stethoscope, Brain, Server, ShieldCheck, CreditCard } from "lucide-react";
+import { Shield, Lock, BookOpen, CheckCircle, Cpu, Activity, Utensils, Stethoscope, Brain, Server, ShieldCheck, CreditCard, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const certifications = [
-  { icon: CheckCircle, title: "ISO 9001", desc: "Quality Management" },
-  { icon: Shield, title: "ISO 45001", desc: "Occupational Health & Safety" },
-  { icon: Activity, title: "ISO 14001", desc: "Environmental Management" },
-  { icon: Utensils, title: "ISO 22000", desc: "Food Safety Management" },
-  { icon: Stethoscope, title: "ISO 13485", desc: "Medical Devices" },
-  { icon: Brain, title: "ISO 42001", desc: "Artificial Intelligence" },
+  { icon: CheckCircle, title: "ISO 9001", desc: "Quality Management", link: "/iso-9001" },
+  { icon: Shield, title: "ISO 45001", desc: "Occupational Health & Safety", link: "/iso-45001" },
+  { icon: Activity, title: "ISO 14001", desc: "Environmental Management", link: "/iso-14001" },
+  { icon: Utensils, title: "ISO 22000", desc: "Food Safety Management", link: "/iso-22000" },
+  { icon: Stethoscope, title: "ISO 13485", desc: "Medical Devices", link: "/iso-13485" },
+  { icon: Brain, title: "ISO 42001", desc: "Artificial Intelligence", link: "/iso-42001" },
 ];
 
 const itServices = [
@@ -30,16 +31,28 @@ const fadeUp = {
   visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.5 } }),
 };
 
-const ServiceCard = ({ icon: Icon, title, desc, i }: { icon: any; title: string; desc: string; i: number }) => (
-  <motion.div custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-    className="group p-6 rounded-xl bg-card border border-border hover:border-accent/40 hover:shadow-lg transition-all duration-300">
-    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-      <Icon className="w-6 h-6 text-accent" />
-    </div>
-    <h4 className="font-display font-semibold text-lg text-foreground mb-1">{title}</h4>
-    <p className="text-sm text-muted-foreground">{desc}</p>
-  </motion.div>
-);
+const ServiceCard = ({ icon: Icon, title, desc, i, link }: { icon: any; title: string; desc: string; i: number; link?: string }) => {
+  const content = (
+    <motion.div custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+      className="group p-6 rounded-xl bg-card border border-border hover:border-accent/40 hover:shadow-lg transition-all duration-300">
+      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+        <Icon className="w-6 h-6 text-accent" />
+      </div>
+      <h4 className="font-display font-semibold text-lg text-foreground mb-1">{title}</h4>
+      <p className="text-sm text-muted-foreground">{desc}</p>
+      {link && (
+        <span className="inline-flex items-center gap-1 text-accent text-sm font-medium mt-3 group-hover:gap-2 transition-all">
+          Learn More <ArrowRight className="w-3.5 h-3.5" />
+        </span>
+      )}
+    </motion.div>
+  );
+
+  if (link) {
+    return <Link to={link}>{content}</Link>;
+  }
+  return content;
+};
 
 const ServicesSection = () => {
   return (
