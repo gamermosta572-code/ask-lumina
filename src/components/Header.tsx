@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Search, Shield, GraduationCap, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const certLinks = [
   { label: "ISO 9001 – Quality Management", to: "/iso-9001" },

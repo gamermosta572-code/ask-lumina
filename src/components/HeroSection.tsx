@@ -73,7 +73,7 @@ const HeroSection = () => {
             <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8 gap-2">
               Explore Services <ArrowRight className="w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="border-silver/40 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8">
+            <Button size="lg" variant="outline" className="border-primary-foreground/60 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 text-base px-8">
               Get a Quote
             </Button>
           </motion.div>
