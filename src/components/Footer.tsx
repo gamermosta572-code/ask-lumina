@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="bg-navy-dark text-primary-foreground">
@@ -7,12 +8,9 @@ const Footer = () => (
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-bold font-display">AL</span>
-            </div>
-            <span className="font-display font-bold text-lg">Ask Lumina</span>
+            <img src={logo} alt="Ask Lumina" className="h-10 w-auto" />
           </div>
-          <p className="text-silver/70 text-sm leading-relaxed">Formerly SIS Certifications. Inspiring progress, defining the future through globally recognized certification services.</p>
+          <p className="text-silver/70 text-sm leading-relaxed">Inspiring progress, defining the future through globally recognized certification services.</p>
         </div>
 
         {/* Quick Links */}
@@ -41,11 +39,11 @@ const Footer = () => (
           <div className="space-y-3 text-sm text-silver/70">
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" />
-              <span>Unit No – 514, 5th Floor, Vipul Business Park, Sector – 48, Sohna Road, Gurgaon, Haryana 122018, India</span>
+              <span>F. Haque Tower, Level-03, 107 Bir Uttam C.R Datta Road, Dhaka-1205</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-accent" />
-              <a href="tel:+918882213680" className="hover:text-accent transition-colors">+91 8882213680</a>
+              <a href="tel:+8801323577502" className="hover:text-accent transition-colors">+880 1323-577502</a>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-accent" />

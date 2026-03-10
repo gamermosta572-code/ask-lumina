@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Search, Shield, GraduationCap, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const certLinks = [
   { label: "ISO 9001 – Quality Management", to: "/iso-9001" },
@@ -38,13 +39,7 @@ const Header = () => {
         <div className="container flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg font-display">AL</span>
-            </div>
-            <div className="leading-tight">
-              <span className="font-display font-bold text-lg text-navy">Ask Lumina</span>
-              <span className="block text-[10px] text-muted-foreground tracking-widest uppercase">Digital Trust</span>
-            </div>
+            <img src={logo} alt="Ask Lumina" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop nav */}
