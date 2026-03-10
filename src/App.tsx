@@ -5,6 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ISO9001 from "./pages/ISO9001";
+import ISO27001 from "./pages/ISO27001";
+import ISO14001 from "./pages/ISO14001";
+import ISO45001 from "./pages/ISO45001";
+import ISO22000 from "./pages/ISO22000";
+import ISO13485 from "./pages/ISO13485";
+import ISO42001 from "./pages/ISO42001";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +23,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/iso-9001" element={<ISO9001 />} />
+          <Route path="/iso-27001" element={<ISO27001 />} />
+          <Route path="/iso-14001" element={<ISO14001 />} />
+          <Route path="/iso-45001" element={<ISO45001 />} />
+          <Route path="/iso-22000" element={<ISO22000 />} />
+          <Route path="/iso-13485" element={<ISO13485 />} />
+          <Route path="/iso-42001" element={<ISO42001 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
