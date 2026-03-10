@@ -58,7 +58,7 @@ const Footer = () => (
     <div className="border-t border-primary-foreground/10">
       <div className="container py-5 flex flex-col sm:flex-row justify-between items-center text-xs text-silver/50 gap-2">
         <span></span>
-        <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
+      
       </div>
     </div>
   </footer>
