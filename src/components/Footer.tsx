@@ -7,12 +7,9 @@ const Footer = () => (
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-bold font-display">AL</span>
-            </div>
-            <span className="font-display font-bold text-lg">Ask Lumina</span>
+            <img src={logo} alt="Ask Lumina" className="h-10 w-auto" />
           </div>
-          <p className="text-silver/70 text-sm leading-relaxed">Formerly SIS Certifications. Inspiring progress, defining the future through globally recognized certification services.</p>
+          <p className="text-silver/70 text-sm leading-relaxed">Inspiring progress, defining the future through globally recognized certification services.</p>
         </div>
 
         {/* Quick Links */}
