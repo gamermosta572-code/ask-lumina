@@ -78,18 +78,16 @@ const HeroSection = () => {
         </div>
 
         {/* Stats */}
-        <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }} className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl">
+        <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }} className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl">
           {stats.map(({ icon: Icon, value, suffix, label }) => (
-            <div key={label} className="flex items-center gap-4 bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-5 border border-primary-foreground/10">
-              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+            <div key={label} className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-5 border border-primary-foreground/10 text-center">
+              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-3">
                 <Icon className="w-6 h-6 text-accent" />
               </div>
-              <div>
-                <div className="text-2xl font-bold text-primary-foreground">
-                  <Counter target={value} suffix={suffix} />
-                </div>
-                <div className="text-sm text-silver-light/70">{label}</div>
+              <div className="text-2xl font-bold text-primary-foreground">
+                <Counter target={value} suffix={suffix} />
               </div>
+              <div className="text-sm text-silver-light/70 mt-1">{label}</div>
             </div>
           ))}
         </motion.div>

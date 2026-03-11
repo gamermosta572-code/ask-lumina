@@ -110,6 +110,8 @@ export default {
         "fade-in": "fade-in 0.6s ease-out forwards",
         scroll: "scroll 30s linear infinite",
         "scroll-reverse": "scroll-reverse 30s linear infinite",
+        "scroll-slow": "scroll 60s linear infinite",
+        "scroll-reverse-slow": "scroll-reverse 60s linear infinite",
       },
     },
   },
