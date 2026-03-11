@@ -49,18 +49,34 @@ const Header = () => {
                 {item}
               </a>
             ))}
+
+            {/* Services Dropdown with Subcategories */}
             <div className="relative group">
               <button className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary flex items-center gap-1">
                 Services <ChevronDown className="w-3.5 h-3.5" />
               </button>
-              <div className="absolute top-full left-0 mt-1 w-72 bg-card rounded-lg shadow-xl border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2">
-                {certLinks.map((s) => (
-                  <Link key={s.to} to={s.to} className="block px-3 py-2 text-sm text-foreground/80 hover:bg-secondary hover:text-accent rounded-md transition-colors">
-                    {s.label}
+              <div className="absolute top-full left-0 mt-1 w-80 bg-card rounded-lg shadow-xl border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-3">
+                {/* Organisational Certification */}
+                <div className="mb-2">
+                  <Link to="/organisational-certification" className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-foreground hover:bg-secondary rounded-md transition-colors">
+                    <Shield className="w-4 h-4 text-accent" /> Organisational Certification
                   </Link>
-                ))}
+                  <div className="pl-9 space-y-0.5">
+                    {certLinks.map((s) => (
+                      <Link key={s.to} to={s.to} className="block px-3 py-1.5 text-xs text-muted-foreground hover:text-accent hover:bg-secondary rounded-md transition-colors">
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div className="border-t border-border my-2" />
+                {/* People Training */}
+                <Link to="/people-training-certification" className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-foreground hover:bg-secondary rounded-md transition-colors">
+                  <GraduationCap className="w-4 h-4 text-accent" /> People Training Certification
+                </Link>
               </div>
             </div>
+
             {["Industries", "Training", "Resources", "Contact Us"].map((item) => (
               <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary">
                 {item}
@@ -87,12 +103,19 @@ const Header = () => {
                 {item}
               </a>
             ))}
-            <div className="pl-3 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Certifications</div>
+            <div className="pl-3 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Organisational Certification</div>
+            <Link to="/organisational-certification" className="block px-3 py-2 text-sm font-medium text-accent hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+              View All Services
+            </Link>
             {certLinks.map((s) => (
-              <Link key={s.to} to={s.to} className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+              <Link key={s.to} to={s.to} className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md pl-6" onClick={() => setMobileOpen(false)}>
                 {s.label}
               </Link>
             ))}
+            <div className="pl-3 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">People Training</div>
+            <Link to="/people-training-certification" className="block px-3 py-2 text-sm font-medium text-accent hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+              View Training Programs
+            </Link>
             {["Industries", "Training", "Resources", "Contact Us"].map((item) => (
               <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
                 {item}
