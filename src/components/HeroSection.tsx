@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
-  { icon: Globe, value: 50, suffix: "+", label: "Countries" },
-  { icon: Users, value: 5000, suffix: "+", label: "Happy Customers" },
-  { icon: Award, value: 200, suffix: "+", label: "Expert Auditors" },
+  { icon: Award, value: 500, suffix: "+", label: "Certified Organisations" },
+  { icon: Users, value: 50, suffix: "+", label: "Consultants" },
+  { icon: Globe, value: 5000, suffix: "+", label: "Training Delivered" },
+  { icon: Award, value: 100, suffix: "+", label: "Auditors" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
@@ -77,7 +78,7 @@ const HeroSection = () => {
         </div>
 
         {/* Stats */}
-        <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }} className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+        <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }} className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl">
           {stats.map(({ icon: Icon, value, suffix, label }) => (
             <div key={label} className="flex items-center gap-4 bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-5 border border-primary-foreground/10">
               <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
