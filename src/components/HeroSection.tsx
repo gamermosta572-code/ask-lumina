@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
-  { icon: Globe, value: 50, suffix: "+", label: "Countries" },
-  { icon: Users, value: 5000, suffix: "+", label: "Happy Customers" },
-  { icon: Award, value: 200, suffix: "+", label: "Expert Auditors" },
+  { icon: Award, value: 500, suffix: "+", label: "Certified Organisations" },
+  { icon: Users, value: 50, suffix: "+", label: "Consultants" },
+  { icon: Globe, value: 5000, suffix: "+", label: "Training Delivered" },
+  { icon: Award, value: 100, suffix: "+", label: "Auditors" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
