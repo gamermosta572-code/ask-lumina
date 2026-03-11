@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
@@ -17,19 +18,25 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-silver">Quick Links</h4>
           <ul className="space-y-2 text-sm text-silver/70">
-            {["About Us", "Services", "Industries", "Training", "Resources", "Contact Us"].map((link) => (
-              <li key={link}><a href={`#${link.toLowerCase().replace(" ", "-")}`} className="hover:text-accent transition-colors">{link}</a></li>
-            ))}
+            <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
+            <li><Link to="/about-us" className="hover:text-accent transition-colors">About Us</Link></li>
+            <li><Link to="/organisational-certification" className="hover:text-accent transition-colors">Services</Link></li>
+            <li><Link to="/industries" className="hover:text-accent transition-colors">Industries</Link></li>
+            <li><Link to="/resources" className="hover:text-accent transition-colors">Resources</Link></li>
+            <li><Link to="/contact-us" className="hover:text-accent transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 
-        {/* Services */}
+        {/* Popular Standards */}
         <div>
           <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-silver">Popular Standards</h4>
           <ul className="space-y-2 text-sm text-silver/70">
-            {["ISO 9001", "ISO 27001", "ISO 45001", "ISO 14001", "ISO 22000", "ISO 42001"].map((s) => (
-              <li key={s}><a href="#" className="hover:text-accent transition-colors">{s}</a></li>
-            ))}
+            <li><Link to="/iso-9001" className="hover:text-accent transition-colors">ISO 9001</Link></li>
+            <li><Link to="/iso-27001" className="hover:text-accent transition-colors">ISO 27001</Link></li>
+            <li><Link to="/iso-45001" className="hover:text-accent transition-colors">ISO 45001</Link></li>
+            <li><Link to="/iso-14001" className="hover:text-accent transition-colors">ISO 14001</Link></li>
+            <li><Link to="/iso-22000" className="hover:text-accent transition-colors">ISO 22000</Link></li>
+            <li><Link to="/iso-42001" className="hover:text-accent transition-colors">ISO 42001</Link></li>
           </ul>
         </div>
 
@@ -41,9 +48,12 @@ const Footer = () => (
               <MapPin className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" />
               <span>F. Haque Tower, Level-03, 107 Bir Uttam C.R Datta Road, Dhaka-1205</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-accent" />
-              <a href="tel:+8801323577502" className="hover:text-accent transition-colors">+880 1323-577502</a>
+            <div className="flex items-start gap-2">
+              <Phone className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" />
+              <div className="flex flex-col gap-1">
+                <a href="tel:+8801323577502" className="hover:text-accent transition-colors">+880 1323-577502</a>
+                <a href="tel:+8801711205697" className="hover:text-accent transition-colors">+880 1711-205697</a>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-accent" />
@@ -57,8 +67,7 @@ const Footer = () => (
     {/* Bottom bar */}
     <div className="border-t border-primary-foreground/10">
       <div className="container py-5 flex flex-col sm:flex-row justify-between items-center text-xs text-silver/50 gap-2">
-        <span></span>
-      
+        <span>© {new Date().getFullYear()} Ask Lumina. All rights reserved.</span>
       </div>
     </div>
   </footer>

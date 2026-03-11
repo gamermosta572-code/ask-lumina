@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Globe, CheckCircle2 } from "lucide-react";
+import iasLogo from "@/assets/ias-logo.png";
+import uafLogo from "@/assets/uaf-logo.png";
 
 const regions = ["Asia", "GCC", "Africa", "Europe", "Americas"];
 
@@ -19,8 +21,8 @@ const TrustSection = () => (
       <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0">
-              <Award className="w-6 h-6 text-gold" />
+            <div className="w-20 h-16 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0 p-2">
+              <img src={iasLogo} alt="IAS - International Accreditation Service" className="w-full h-full object-contain" />
             </div>
             <div>
               <h4 className="font-semibold text-lg mb-1">IAS Accredited</h4>
@@ -28,8 +30,8 @@ const TrustSection = () => (
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0">
-              <CheckCircle2 className="w-6 h-6 text-gold" />
+            <div className="w-20 h-16 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0 p-2">
+              <img src={uafLogo} alt="UAF - United Accreditation Foundation" className="w-full h-full object-contain" />
             </div>
             <div>
               <h4 className="font-semibold text-lg mb-1">UAF Accredited</h4>

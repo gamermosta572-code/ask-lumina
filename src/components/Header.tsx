@@ -44,11 +44,12 @@ const Header = () => {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {["Home", "About Us"].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary">
-                {item}
-              </a>
-            ))}
+            <Link to="/" className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary">
+              Home
+            </Link>
+            <Link to="/about-us" className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary">
+              About Us
+            </Link>
 
             {/* Services Dropdown with Subcategories */}
             <div className="relative group">
@@ -77,11 +78,15 @@ const Header = () => {
               </div>
             </div>
 
-            {["Industries", "Training", "Resources", "Contact Us"].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary">
-                {item}
-              </a>
-            ))}
+            <Link to="/industries" className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary">
+              Industries
+            </Link>
+            <Link to="/resources" className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary">
+              Resources
+            </Link>
+            <Link to="/contact-us" className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-accent transition-colors rounded-md hover:bg-secondary">
+              Contact Us
+            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -98,11 +103,12 @@ const Header = () => {
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="lg:hidden border-t border-border bg-background p-4 space-y-2">
-            {["Home", "About Us"].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
-                {item}
-              </a>
-            ))}
+            <Link to="/" className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+              Home
+            </Link>
+            <Link to="/about-us" className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+              About Us
+            </Link>
             <div className="pl-3 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Organisational Certification</div>
             <Link to="/organisational-certification" className="block px-3 py-2 text-sm font-medium text-accent hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
               View All Services
@@ -116,11 +122,15 @@ const Header = () => {
             <Link to="/people-training-certification" className="block px-3 py-2 text-sm font-medium text-accent hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
               View Training Programs
             </Link>
-            {["Industries", "Training", "Resources", "Contact Us"].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
-                {item}
-              </a>
-            ))}
+            <Link to="/industries" className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+              Industries
+            </Link>
+            <Link to="/resources" className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+              Resources
+            </Link>
+            <Link to="/contact-us" className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+              Contact Us
+            </Link>
             <Button className="w-full bg-accent text-accent-foreground mt-2">Get a Quote</Button>
           </div>
         )}

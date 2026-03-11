@@ -14,6 +14,10 @@ import ISO13485 from "./pages/ISO13485";
 import ISO42001 from "./pages/ISO42001";
 import OrganisationalCertification from "./pages/OrganisationalCertification";
 import PeopleTrainingCertification from "./pages/PeopleTrainingCertification";
+import AboutUs from "./pages/AboutUs";
+import Industries from "./pages/Industries";
+import Resources from "./pages/Resources";
+import ContactUs from "./pages/ContactUs";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +38,10 @@ const App = () => (
           <Route path="/iso-42001" element={<ISO42001 />} />
           <Route path="/organisational-certification" element={<OrganisationalCertification />} />
           <Route path="/people-training-certification" element={<PeopleTrainingCertification />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -19,7 +19,7 @@ const ClientsSection = () => (
 
     {/* Sliding logos - row 1 */}
     <div className="relative">
-      <div className="flex animate-scroll gap-8 w-max">
+      <div className="flex animate-scroll-slow gap-8 w-max">
         {[...clients, ...clients].map((name, i) => (
           <div key={i} className="flex-shrink-0 w-48 h-20 bg-card border border-border rounded-xl flex items-center justify-center px-4 hover:border-accent/30 transition-colors">
             <span className="font-display font-semibold text-foreground/60 text-sm text-center">{name}</span>
@@ -30,7 +30,7 @@ const ClientsSection = () => (
 
     {/* Sliding logos - row 2 (reverse) */}
     <div className="relative mt-6">
-      <div className="flex animate-scroll-reverse gap-8 w-max">
+      <div className="flex animate-scroll-reverse-slow gap-8 w-max">
         {[...clients.slice(10), ...clients.slice(0, 10), ...clients.slice(10), ...clients.slice(0, 10)].map((name, i) => (
           <div key={i} className="flex-shrink-0 w-48 h-20 bg-card border border-border rounded-xl flex items-center justify-center px-4 hover:border-accent/30 transition-colors">
             <span className="font-display font-semibold text-foreground/60 text-sm text-center">{name}</span>
