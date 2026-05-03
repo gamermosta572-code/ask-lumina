@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  { name: "British Council", logo: "/BritishCouncil.png" },
-  { name: "CertNexus", logo: "/CertNexus.png" },
-  { name: "Microsoft", logo: "/Microsoft.png" },
-  { name: "CISCO", logo: "/CISCO.png" },
-  { name: "CompTIA", logo: "/CompTIA.png" }
+  { name: "British Council", logo: "/britishcouncil.png" },
+  { name: "CertNexus", logo: "/certnexus.png" },
+  { name: "Microsoft", logo: "/microsoft.png" },
+  { name: "CISCO", logo: "/cisco.png" },
+  { name: "CompTIA", logo: "/comptia.png" }
 ];
 
 const PartnersSection = () => (
