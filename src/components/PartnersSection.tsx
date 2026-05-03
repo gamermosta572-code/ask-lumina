@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  { name: "British Council", url: "https://upload.wikimedia.org/wikipedia/commons/e/e3/British_Council_logo.svg" },
-  { name: "CertNexus", url: "https://certnexus.com/wp-content/uploads/2018/06/CertNexus_Logo_Color.png" },
-  { name: "Microsoft", url: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_2012.svg" },
-  { name: "CISCO", url: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" },
-  { name: "CompTIA", url: "https://upload.wikimedia.org/wikipedia/commons/b/b1/CompTIA_logo.svg" },
+  { name: "British Council", logo: "/src/assets/british-council.png" },
+  { name: "CertNexus", logo: "/src/assets/certnexus.png" }, // Added this line
+  { name: "Microsoft", logo: "/src/assets/microsoft.png" },
+  { name: "CISCO", logo: "/src/assets/cisco.png" },
+  { name: "CompTIA", logo: "/src/assets/comptia.png" }
 ];
 
 const PartnersSection = () => (
@@ -27,12 +27,11 @@ const PartnersSection = () => (
             key={i}
             className="flex-shrink-0 w-56 h-28 bg-card border border-border rounded-xl flex items-center justify-center px-6 hover:border-accent/40 hover:shadow-lg transition-all group"
           >
-            <img
-              src={p.url}
-              alt={`${p.name} logo`}
-              loading="lazy"
-              className="max-h-14 max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-            />
+            <img 
+  src={partner.logo} 
+  alt={partner.name} 
+  className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300" 
+/>
           </div>
         ))}
       </div>
