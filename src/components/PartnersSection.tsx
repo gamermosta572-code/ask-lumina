@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  { name: "British Council", logo: "/src/assets/british-council.png" },
-  { name: "CertNexus", logo: "/src/assets/certnexus.png" }, // Added this line
-  { name: "Microsoft", logo: "/src/assets/microsoft.png" },
-  { name: "CISCO", logo: "/src/assets/cisco.png" },
-  { name: "CompTIA", logo: "/src/assets/comptia.png" }
+  { name: "British Council", logo: "/src/assets/British Council.png" },
+  { name: "CertNexus", logo: "/src/assets/CertNexus.png" },
+  { name: "Microsoft", logo: "/src/assets/Microsoft.png" },
+  { name: "CISCO", logo: "/src/assets/CISCO.png" },
+  { name: "CompTIA", logo: "/src/assets/CompTIA.png" }
 ];
 
 const PartnersSection = () => (
@@ -28,8 +28,8 @@ const PartnersSection = () => (
             className="flex-shrink-0 w-56 h-28 bg-card border border-border rounded-xl flex items-center justify-center px-6 hover:border-accent/40 hover:shadow-lg transition-all group"
           >
             <img 
-  src={partner.logo} 
-  alt={partner.name} 
+  src={p.logo} 
+alt={p.name} 
   className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300" 
 />
           </div>
