@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { waLink } from "@/lib/whatsapp";
 
 const ContactUs = () => (
   <div className="min-h-screen bg-background">
@@ -37,7 +38,14 @@ const ContactUs = () => (
               </div>
               <Input placeholder="Subject" className="bg-card" />
               <Textarea placeholder="Your Message" rows={5} className="bg-card" />
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto px-8">Send Message</Button>
+              <div className="flex flex-wrap gap-3">
+                <Button type="submit" size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8">Send Message</Button>
+                <Button asChild type="button" size="lg" variant="outline" className="gap-2 border-accent/40 text-accent hover:bg-accent hover:text-accent-foreground">
+                  <a href={waLink("Hi Ask Lumina, I'd like to get in touch.")} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
+                  </a>
+                </Button>
+              </div>
             </form>
           </motion.div>
 
