@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Search, Shield, GraduationCap, Menu, X, ChevronDown } from "lucide-react";
+import { Search, Shield, GraduationCap, Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { waLink } from "@/lib/whatsapp";
 import logo from "@/assets/logo.png";
 
 const certLinks = [
@@ -91,7 +92,11 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="ghost" size="icon"><Search className="w-4 h-4" /></Button>
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Get a Quote</Button>
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2">
+              <a href={waLink("Hi Ask Lumina, I'd like a quote for certification services.")} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4" /> Get a Quote
+              </a>
+            </Button>
           </div>
 
           {/* Mobile toggle */}
@@ -131,7 +136,11 @@ const Header = () => {
             <Link to="/contact-us" className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
               Contact Us
             </Link>
-            <Button className="w-full bg-accent text-accent-foreground mt-2">Get a Quote</Button>
+            <Button asChild className="w-full bg-accent text-accent-foreground mt-2 gap-2">
+              <a href={waLink("Hi Ask Lumina, I'd like a quote for certification services.")} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4" /> Get a Quote
+              </a>
+            </Button>
           </div>
         )}
       </header>
