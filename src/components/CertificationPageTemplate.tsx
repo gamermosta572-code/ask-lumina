@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowRight, FileText, Users, Globe, Award, ChevronRight } from "lucide-react";
+import { CheckCircle, ArrowRight, FileText, Users, Globe, Award, ChevronRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { waLink } from "@/lib/whatsapp";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -52,10 +53,12 @@ const CertificationPageTemplate = ({ data }: { data: CertificationPageData }) =>
             <p className="text-lg text-silver-light/80 mb-3 italic">{data.tagline}</p>
             <p className="text-silver-light/70 max-w-2xl mb-8">{data.heroDescription}</p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-gold text-navy-dark hover:bg-gold/90 font-semibold px-6">
-                Get a Quote <ArrowRight className="w-4 h-4 ml-1" />
+              <Button asChild className="bg-gold text-navy-dark hover:bg-gold/90 font-semibold px-6 gap-2">
+                <a href={waLink(`Hi Ask Lumina, I'm interested in ${data.standard} certification. Please share a quote.`)} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-4 h-4" /> Get a Quote on WhatsApp
+                </a>
               </Button>
-              <Button variant="outline" className="border-silver/30 text-primary-foreground hover:bg-silver/10">
+              <Button variant="outline" className="border-silver/30 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 hover:text-primary-foreground">
                 Download Brochure <FileText className="w-4 h-4 ml-1" />
               </Button>
             </div>
@@ -177,11 +180,15 @@ const CertificationPageTemplate = ({ data }: { data: CertificationPageData }) =>
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">Ready to Get {data.standard} Certified?</h2>
             <p className="text-silver-light/70 mb-8 max-w-xl mx-auto">{data.ctaText || "Our team of accredited auditors and experts will guide you through every step of the certification process."}</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button className="bg-gold text-navy-dark hover:bg-gold/90 font-semibold px-8">
-                Get a Quote <ArrowRight className="w-4 h-4 ml-1" />
+              <Button asChild className="bg-gold text-navy-dark hover:bg-gold/90 font-semibold px-8 gap-2">
+                <a href={waLink(`Hi Ask Lumina, I'm interested in ${data.standard} certification. Please share a quote.`)} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-4 h-4" /> Get a Quote on WhatsApp
+                </a>
               </Button>
-              <Button variant="outline" className="border-silver/30 text-primary-foreground hover:bg-silver/10">
-                <Users className="w-4 h-4 mr-1" /> Talk to an Expert
+              <Button asChild variant="outline" className="border-silver/30 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 hover:text-primary-foreground gap-2">
+                <a href={waLink(`Hi Ask Lumina, I'd like to talk to an expert about ${data.standard}.`)} target="_blank" rel="noopener noreferrer">
+                  <Users className="w-4 h-4" /> Talk to an Expert
+                </a>
               </Button>
             </div>
             <div className="flex justify-center gap-8 mt-10 text-sm text-silver-light/60">
