@@ -1,8 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Shield, CheckCircle, Activity, Utensils, Stethoscope, Brain, Lock, Cpu, ShieldCheck, Server, CreditCard, ArrowRight } from "lucide-react";
+import { Shield, CheckCircle, Activity, Utensils, Stethoscope, Brain, Lock, Cpu, ShieldCheck, Server, CreditCard, ArrowRight, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { waLink } from "@/lib/whatsapp";
 
 const managementCerts = [
   {
@@ -176,8 +177,8 @@ const OrganisationalCertification = () => (
       <div className="container text-center">
         <h2 className="font-display text-3xl font-bold mb-4">Ready to Get Certified?</h2>
         <p className="text-silver-light/70 max-w-2xl mx-auto mb-8">Contact us today for a free consultation and learn how our certification services can transform your organisation.</p>
-        <a href="#contact" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors">
-          Get a Quote <ArrowRight className="w-4 h-4" />
+        <a href={waLink("Hi Ask Lumina, I'd like a free consultation about your certification services.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors">
+          <MessageCircle className="w-4 h-4" /> Get a Quote on WhatsApp
         </a>
       </div>
     </section>

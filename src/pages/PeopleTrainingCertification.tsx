@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { BookOpen, GraduationCap, Users, Award, CheckCircle, ArrowRight, Clock, Globe } from "lucide-react";
+import { BookOpen, GraduationCap, Users, Award, CheckCircle, ArrowRight, Clock, Globe, MessageCircle } from "lucide-react";
+import { waLink } from "@/lib/whatsapp";
 
 const courses = [
   {
@@ -132,8 +133,8 @@ const PeopleTrainingCertification = () => (
       <div className="container text-center">
         <h2 className="font-display text-3xl font-bold mb-4">Elevate Your Team's Expertise</h2>
         <p className="text-silver-light/70 max-w-2xl mx-auto mb-8">Contact us to discuss group training, custom programs, or upcoming course schedules.</p>
-        <a href="#contact" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors">
-          Enquire Now <ArrowRight className="w-4 h-4" />
+        <a href={waLink("Hi Ask Lumina, I'd like to enquire about training programs and schedules.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors">
+          <MessageCircle className="w-4 h-4" /> Enquire on WhatsApp
         </a>
       </div>
     </section>

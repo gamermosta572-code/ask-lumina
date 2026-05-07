@@ -27,11 +27,11 @@ const PartnersSection = () => (
             key={i}
             className="flex-shrink-0 w-56 h-28 bg-card border border-border rounded-xl flex items-center justify-center px-6 hover:border-accent/40 hover:shadow-lg transition-all group"
           >
-            <img 
-  src={p.logo} 
-alt={p.name} 
-  className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300" 
-/>
+            <img
+              src={p.logo}
+              alt={p.name}
+              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </div>
         ))}
       </div>

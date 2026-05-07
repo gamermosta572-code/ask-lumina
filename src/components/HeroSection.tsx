@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Users, Award } from "lucide-react";
+import { ArrowRight, Globe, Users, Award, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { waLink } from "@/lib/whatsapp";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
@@ -68,11 +69,13 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8 gap-2">
-              Explore Services <ArrowRight className="w-4 h-4" />
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8 gap-2">
+              <a href="#services">Explore Services <ArrowRight className="w-4 h-4" /></a>
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/60 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 text-base px-8">
-              Get a Quote
+            <Button asChild size="lg" variant="outline" className="border-primary-foreground/60 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 hover:text-primary-foreground text-base px-8 gap-2">
+              <a href={waLink("Hi Ask Lumina, I'd like a quote for certification services.")} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4" /> Get a Quote on WhatsApp
+              </a>
             </Button>
           </motion.div>
         </div>
